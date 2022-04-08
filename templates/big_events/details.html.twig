@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+   <h1 class="page-header mt-3" style="color:#FFD700 " > Events details: </h1>
+   <h3 class="page-header mt-1">{{event.name}} <button class = "btn btn-outline-dark" href="{{event.url}}">To Events Page</button></h3>
+   <ul class="list-group">
+       <li class="list-group-item">Description: {{event.description}}</li>
+       <li class="list-group-item">Capacity: {{event.capacity}}</li>
+       <li class="list-group-item">Email: {{event.email}}</li>
+       <li class="list-group-item">Phone: {{event.phone}}</li>
+       <li class="list-group-item">Type: {{event.type}}</li>
+       <li class="list-group-item">Event Date: <strong> {{event.date|date('F j, Y, g:i a')}} </strong> </li>
+   </ul>
+   <p>
+   <h1>HERE IS A MAP</h1>
+       {{event.lat}}
+        {{event.lon}}
+   </p><br>
+<script>
+   var map;
+
+function initMap() {
+
+var vienna = {
+
+    lat: $lat,
+
+    lng: $lon
+
+};
+
+map = new google.maps.Map(document.getElementById('map'), {
+
+    center: vienna,
+
+    zoom: 8
+
+});
+
+var pinpoint = new google.maps.Marker({
+
+    position: vienna,
+
+    map: map
+
+});
+
+}
+   </script>
+   <a class="btn btn-outline-dark" href="/">Back</a>
+{% endblock %}
