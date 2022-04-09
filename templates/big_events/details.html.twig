@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block body %}
    <h1 class="page-header mt-3" style="color:#FFD700 " > Events details: </h1>
-   <h3 class="page-header mt-1">{{event.name}} <button class = "btn btn-outline-dark" href="{{event.url}}">To Events Page</button></h3>
+   <h3 class="page-header mt-1">{{event.name}} <button class = "btn btn-outline-dark" > </a>
+   <a href="{{event.url}}" style= "color:black ; text-decoration:none">To Events Page</a></button></h3>
    <ul class="list-group">
        <li class="list-group-item">Description: {{event.description}}</li>
        <li class="list-group-item">Capacity: {{event.capacity}}</li>
